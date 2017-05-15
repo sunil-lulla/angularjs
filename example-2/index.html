@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+	<title></title>
+	<script
+src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.6/angular.js">
+</script>
+</head>
+<body>
+<div ng-controller="mycontroller">
+	<input type="text" ng-model="name" />
+	hello {{ clock }}
+</div>
+<script type="text/javascript">
+	function mycontroller($scope) {
+		var update_clock = function(){
+			$scope.clock = new Date();
+		};
+		setInterval(function(){
+			$scope.$apply(update_clock);
+		},1000);
+		update_clock();
+	}
+</script>
+</body>
+</html>
